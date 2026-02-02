@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trapala - New Sessions Man</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf8f3;
+            color: #292524;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Crimson Text', serif;
+            font-weight: 300;
+        }
+
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+                max-width: 1280px;
+            }
+        }
+
+        header {
+            border-bottom: 1px solid #d4d4d8;
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 248, 243, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            padding: 2rem 0;
+        }
+
+        header .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        header p {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #78716c;
+            font-weight: 300;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 6rem 0;
+            }
+        }
+
+        .bg-stone-50 {
+            background-color: #faf8f3;
+        }
+
+        .bg-white {
+            background-color: #ffffff;
+        }
+
+        .border-t {
+            border-top: 1px solid #d4d4d8;
+        }
+
+        .hero-container {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            padding: 0 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        .description-text {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .description-text p {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.875rem;
+            color: #78716c;
+            line-height: 1.8;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            .description-text p {
+                font-size: 1rem;
+            }
+        }
+
+        .video-section {
+            text-align: center;
+            margin: 2rem 0;
+            background-color: #f5f5f0;
+            padding: 2rem;
+            border-radius: 4px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            color: #a8a29e;
+            font-size: 0.875rem;
+        }
+
+        .collection-details {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        .collection-details-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #292524;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-item h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #292524;
+            font-weight: 300;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-item p {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            color: #78716c;
+            line-height: 1.8;
+        }
+
+        .collection-container {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        .collection-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #292524;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .model-section {
+            margin-bottom: 4rem;
+        }
+
+        .model-section:not(:last-child) {
+            border-bottom: 1px solid #d4d4d8;
+            padding-bottom: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .slider-container {
+            position: relative;
+            margin-bottom: 2rem;
+            background-color: #f5f5f0;
+        }
+
+        .slider-image {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .slider-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            color: #292524;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: opacity 0.2s;
+            font-size: 1.5rem;
+        }
+
+        .slider-nav:hover {
+            opacity: 0.6;
+        }
+
+        .slider-nav.prev {
+            left: 0.75rem;
+        }
+
+        .slider-nav.next {
+            right: 0.75rem;
+        }
+
+        .image-counter {
+            position: absolute;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            background-color: rgba(41, 37, 36, 0.7);
+            color: #faf8f3;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 300;
+        }
+
+        .model-info {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .model-info h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #292524;
+            font-weight: 300;
+        }
+
+        .model-info p {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            color: #78716c;
+            line-height: 1.6;
+        }
+
+        .model-price {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.875rem;
+            color: #292524;
+            font-weight: 300;
+        }
+
+        .image-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .indicator {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: #d4d4d8;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .indicator.active {
+            background-color: #292524;
+        }
+
+        .view-purchase-btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            padding: 0.75rem 2rem;
+            background-color: transparent;
+            color: #292524;
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border: 1px solid #292524;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgba(41, 37, 36, 0.05);
+        }
+
+        .exclusive-container {
+            max-width: 42rem;
+            text-align: center;
+        }
+
+        .exclusive-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #292524;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .exclusive-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.875rem;
+            color: #78716c;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .newsletter-form {
+                flex-direction: row;
+            }
+        }
+
+        input[type="email"] {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #a8a29e;
+            background-color: #ffffff;
+            color: #292524;
+            font-size: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            outline: none;
+            flex: 1;
+        }
+
+        input[type="email"]::placeholder {
+            color: #a8a29e;
+        }
+
+        .privacy-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            color: #a8a29e;
+            margin-top: 1rem;
+        }
+
+        footer {
+            border-top: 1px solid #d4d4d8;
+            padding: 2rem 0;
+            background-color: #faf8f3;
+        }
+
+        footer p {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #a8a29e;
+            font-weight: 300;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 50;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 2rem;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .close-modal-x {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: transparent;
+            border: none;
+            font-size: 28px;
+            color: #292524;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+            transition: opacity 0.2s;
+        }
+
+        .close-modal-x:hover {
+            opacity: 0.6;
+        }
+
+        .modal-header {
+            position: relative;
+            width: 100%;
+            background-color: #f5f5f0;
+            line-height: 0;
+        }
+
+        .modal-header img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .modal-body {
+                padding: 2rem;
+            }
+        }
+
+        .modal-body-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #d4d4d8;
+        }
+
+        .modal-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #292524;
+            font-weight: 300;
+        }
+
+        .modal-desc {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            color: #78716c;
+            line-height: 1.8;
+        }
+
+        .modal-price {
+            font-family: 'Crimson Text', serif;
+            font-size: 1rem;
+            color: #292524;
+            font-weight: 300;
+        }
+
+        .modal-body-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .modal-body-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .modal-left-col,
+        .modal-right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .modal-section-title {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #292524;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .spec-item {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .spec-label {
+            color: #78716c;
+            font-weight: 400;
+            min-width: 120px;
+        }
+
+        .spec-value {
+            color: #292524;
+        }
+
+        .modal-section-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.75rem;
+            color: #78716c;
+            line-height: 1.8;
+        }
+
+        .modal-actions {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d4d4d8;
+        }
+
+        .modal-actions button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #292524;
+            color: #faf8f3;
+            border: 1px solid #292524;
+        }
+
+        .modal-actions button:hover {
+            background-color: #44403c;
+        }
+
+        /* Welcome Modal */
+        .welcome-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 60;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .welcome-modal.active {
+            display: flex;
+        }
+
+        .welcome-content {
+            background-color: #ffffff;
+            max-width: 500px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+
+
+        .welcome-content h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+            color: #292524;
+            font-weight: 300;
+        }
+
+        .welcome-content p {
+            font-family: 'Crimson Text', serif;
+            font-size: 0.875rem;
+            color: #78716c;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-content button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #292524;
+            color: #faf8f3;
+            border: 1px solid #292524;
+        }
+
+        .welcome-content button:hover {
+            background-color: #44403c;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>TRAPALA</h1>
+            <p>New Sessions Man Collection</p>
+        </div>
+    </header>
+
+    <section class="bg-stone-50">
+        <div class="container hero-container">
+            <div class="hero-image">
+                <img id="hero-img" src="images/imagen-principal.base64" alt="Trapala Collection">
+            </div>
+            <div class="description-text">
+                <p>The New Sessions Man collection represents an exploration of refined minimalism and timeless craftsmanship. Each sneaker is meticulously designed to embody the essence of quiet luxury—understated elegance that transcends seasonal trends.</p>
+                <p>Crafted from premium materials and constructed with impeccable attention to detail, these sneakers are a statement of sophisticated taste. The collection features carefully curated silhouettes that balance contemporary aesthetics with enduring design principles.</p>
+                <p>Made-to-order production enables personalization, allowing each piece to reflect individual style while maintaining the collection's refined character.</p>
+            </div>
+            <div class="video-section">
+                <div class="video-placeholder">Video placeholder - Insert your video here</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white border-t">
+        <div class="container collection-details">
+            <h2 class="collection-details-title">Collection Details</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Materials</h4>
+                    <p>Premium leather and technical fabrics sourced from the finest suppliers. Each material is selected for durability, aesthetic excellence, and environmental responsibility.</p>
+                </div>
+                <div class="detail-item">
+                    <h4>Craftsmanship</h4>
+                    <p>Handcrafted by master artisans with decades of experience. Each pair undergoes rigorous quality control to ensure perfection in every detail.</p>
+                </div>
+                <div class="detail-item">
+                    <h4>Design Philosophy</h4>
+                    <p>Timeless silhouettes designed to transcend seasonal trends. The collection balances contemporary aesthetics with enduring design principles for lasting relevance.</p>
+                </div>
+                <div class="detail-item">
+                    <h4>Personalization</h4>
+                    <p>Made-to-order production enables customization. Each piece can be personalized to reflect individual style while maintaining the collection's refined character.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white border-t">
+        <div class="container collection-container">
+            <h2 class="collection-title">New Sessions Man</h2>
+
+            <div class="model-section">
+                <div class="slider-container">
+                    <div class="slider-image">
+                        <img id="sessionA-img" src="images/SessionsA-1.base64" alt="Sessions A">
+                    </div>
+                    <button class="slider-nav prev" onclick="prevImage('a')">‹</button>
+                    <button class="slider-nav next" onclick="nextImage('a')">›</button>
+                    <div class="image-counter" id="sessionA-counter">1 / 4</div>
+                </div>
+                <div class="image-indicators">
+                    <button class="indicator active" onclick="goToImage('a', 0)"></button>
+                    <button class="indicator" onclick="goToImage('a', 1)"></button>
+                    <button class="indicator" onclick="goToImage('a', 2)"></button>
+                    <button class="indicator" onclick="goToImage('a', 3)"></button>
+                </div>
+                <div class="model-info">
+                    <h3>Sessions A - BT8</h3>
+                    <p>Nuestro botín más vendido. Edición limitada disponible hasta agotar existencias.</p>
+                    <span class="model-price">€280</span>
+                </div>
+                <div class="view-purchase-btn">
+                    <button onclick="openModal('a')">View & Purchase</button>
+                </div>
+            </div>
+
+            <div class="model-section">
+                <div class="slider-container">
+                    <div class="slider-image">
+                        <img id="sessionB-img" src="images/SessionsB-1.base64" alt="Sessions B">
+                    </div>
+                    <button class="slider-nav prev" onclick="prevImage('b')">‹</button>
+                    <button class="slider-nav next" onclick="nextImage('b')">›</button>
+                    <div class="image-counter" id="sessionB-counter">1 / 3</div>
+                </div>
+                <div class="image-indicators">
+                    <button class="indicator active" onclick="goToImage('b', 0)"></button>
+                    <button class="indicator" onclick="goToImage('b', 1)"></button>
+                    <button class="indicator" onclick="goToImage('b', 2)"></button>
+                </div>
+                <div class="model-info">
+                    <h3>Sessions B - BT12</h3>
+                    <p>Contemporary design with technical fabric blend.</p>
+                    <span class="model-price">€300</span>
+                </div>
+                <div class="view-purchase-btn">
+                    <button onclick="openModal('b')">View & Purchase</button>
+                </div>
+            </div>
+
+            <div class="model-section">
+                <div class="slider-container">
+                    <div class="slider-image">
+                        <img id="sessionC-img" src="images/SessionsC-1.base64" alt="Sessions C">
+                    </div>
+                    <button class="slider-nav prev" onclick="prevImage('c')">‹</button>
+                    <button class="slider-nav next" onclick="nextImage('c')">›</button>
+                    <div class="image-counter" id="sessionC-counter">1 / 4</div>
+                </div>
+                <div class="image-indicators">
+                    <button class="indicator active" onclick="goToImage('c', 0)"></button>
+                    <button class="indicator" onclick="goToImage('c', 1)"></button>
+                    <button class="indicator" onclick="goToImage('c', 2)"></button>
+                    <button class="indicator" onclick="goToImage('c', 3)"></button>
+                </div>
+                <div class="model-info">
+                    <h3>Sessions C - Militare</h3>
+                    <p>Minimalist approach with refined proportions.</p>
+                    <span class="model-price">€320</span>
+                </div>
+                <div class="view-purchase-btn">
+                    <button onclick="openModal('c')">View & Purchase</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white border-t">
+        <div class="container exclusive-container">
+            <h2 class="exclusive-title">Exclusive Access</h2>
+            <p class="exclusive-text">Be the first to discover upcoming releases and gain exclusive access to private sales. Subscribe to our curated list for early access to limited editions and pre-order opportunities reserved for our most discerning clientele.</p>
+            <div class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Enter your email">
+                <button onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+            <p class="privacy-text">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Trapala © 2026. New Sessions Man Collection. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal-x" onclick="closeModal()">✕</button>
+            <div class="modal-header">
+                <img id="modal-img" src="" alt="Product Image">
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-header">
+                    <h3 class="modal-title" id="modal-title"></h3>
+                    <p class="modal-desc" id="modal-desc"></p>
+                    <p class="modal-price" id="modal-price"></p>
+                </div>
+
+                <div class="modal-body-content">
+                    <div class="modal-left-col">
+                        <div>
+                            <h4 class="modal-section-title">Technical Specifications</h4>
+                            <div id="modal-specs-content"></div>
+                        </div>
+                    </div>
+
+                    <div class="modal-right-col">
+                        <div>
+                            <h4 class="modal-section-title">Origin</h4>
+                            <p class="modal-section-text" id="modal-origin-text"></p>
+                        </div>
+                        <div>
+                            <h4 class="modal-section-title">Details</h4>
+                            <p class="modal-section-text" id="modal-details-text"></p>
+                        </div>
+                        <div>
+                            <h4 class="modal-section-title">Care Instructions</h4>
+                            <p class="modal-section-text" id="modal-care-text"></p>
+                        </div>
+
+                        <div class="modal-actions">
+                            <button id="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div id="welcome-modal" class="welcome-modal">
+        <div class="welcome-content">
+            <h2>Welcome!</h2>
+            <p>Thank you for subscribing to our exclusive list. You'll be the first to discover new releases and gain access to private sales reserved for our most discerning clientele. Check your email for a special welcome gift.</p>
+            <button onclick="closeWelcomeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const imageFiles = {
+            a: ['SessionsA-1.base64', 'SessionsA-2.base64', 'SessionsA-3.base64', 'SessionsA-4.base64'],
+            b: ['SessionsB-1.base64', 'SessionsB-2.base64', 'SessionsB-3.base64'],
+            c: ['SessionsC-1.base64', 'SessionsC-2.base64', 'SessionsC-3.base64', 'SessionsC-4.base64'],
+            modal: {
+                a: 'SessionsA-modal.base64',
+                b: 'SessionsB-modal.base64',
+                c: 'SessionsC-modal.base64'
+            }
+        };
+
+        const models = {
+            a: {
+                fullName: "Sessions A - BT8",
+                desc: "Un diálogo entre la arquitectura contemporánea y el calzado de autor. Edición limitada disponible hasta agotar existencias.",
+                price: "€280",
+                origin: "La colección New Sessions Man nace del diálogo entre la arquitectura contemporánea y el arte de la fundadora Casadevall. Cada pieza es una reflexión sobre el espacio, la forma y la función, donde el calzado se convierte en un objeto de autor. Las alturas de TRÁPALA representan diferentes perspectivas arquitectónicas, cada una con su propia identidad visual y constructiva. Sessions A - BT8 es la segunda altura, un ejercicio de equilibrio entre la innovación técnica y la tradición artesanal española.",
+                specs: {
+                    "Material": "Textil con trazos de Casadevall y serraje natural color calabaza",
+                    "Construction": "Lengüeta con brandy de la casa en color chocolate",
+                    "Sole": "Suela marrón 4 cm con pisada rojo TRÁPALA",
+                    "Lining": "Forro interior ecológico, transpirable, absorbente y libre de cromo",
+                    "Closure": "Cordones color chocolate",
+                    "Weight": "Altura talón 15 cm",
+                    "Origin": "Made in Spain"
+                },
+                details: "Segunda de las 5 alturas de TRÁPALA. Plantilla extraíble rojo TRÁPALA con alto confort y absorción de impactos. Atemporales.",
+                care: "Lona/nylon/goma: limpiar con toallita húmeda. Serraje: cepillar en seco con cerdas suaves. Piel: paño seco o ligeramente húmedo, evitar productos agresivos."
+            },
+            b: {
+                fullName: "Sessions B - BT12",
+                desc: "Contemporary design with technical fabric blend.",
+                price: "€300",
+                origin: "La colección New Sessions Man nace del diálogo entre la arquitectura contemporánea y el arte de la fundadora Casadevall. Cada pieza es una reflexión sobre el espacio, la forma y la función, donde el calzado se convierte en un objeto de autor.",
+                specs: {
+                    "Material": "Technical fabric blend with premium leather",
+                    "Construction": "Modern construction with reinforced stitching",
+                    "Sole": "Rubber sole with cushioned platform",
+                    "Lining": "Breathable textile lining",
+                    "Closure": "Lace-up with metal eyelets",
+                    "Weight": "450g per pair",
+                    "Origin": "Made in Spain"
+                },
+                details: "Contemporary silhouette with innovative design elements.",
+                care: "Clean with soft cloth. Avoid harsh chemicals."
+            },
+            c: {
+                fullName: "Sessions C - Militare",
+                desc: "Minimalist approach with refined proportions.",
+                price: "€320",
+                origin: "La colección New Sessions Man nace del diálogo entre la arquitectura contemporánea y el arte de la fundadora Casadevall. Cada pieza es una reflexión sobre el espacio, la forma y la función, donde el calzado se convierte en un objeto de autor. Sessions C es la expresión más pura del minimalismo arquitectónico, donde cada detalle tiene propósito y significado.",
+                specs: {
+                    "Material": "Premium leather with minimal detailing",
+                    "Construction": "Hand-stitched construction",
+                    "Sole": "Minimalist rubber sole",
+                    "Lining": "Soft textile lining",
+                    "Closure": "Lace-up closure",
+                    "Weight": "420g per pair",
+                    "Origin": "Made in Spain"
+                },
+                details: "Pure minimalist design with refined proportions.",
+                care: "Clean with dry cloth. Use leather conditioner occasionally."
+            }
+        };
+
+        const currentIndices = {
+            a: 0,
+            b: 0,
+            c: 0
+        };
+        const productUrls = {
+            'a': 'https://trapala.es/products/bt8-regina-zucca',
+            'b': 'https://trapala.es/products/bt12-buonanotte',
+            'c': 'https://trapala.es/products/sneaky-militare-classic'
+        };
+
+        function prevImage(modelId) {
+            const maxImages = imageFiles[modelId].length;
+            currentIndices[modelId] = (currentIndices[modelId] - 1 + maxImages) % maxImages;
+            updateSlider(modelId);
+        }
+
+        function nextImage(modelId) {
+            const maxImages = imageFiles[modelId].length;
+            currentIndices[modelId] = (currentIndices[modelId] + 1) % maxImages;
+            updateSlider(modelId);
+        }
+
+        function goToImage(modelId, index) {
+            currentIndices[modelId] = index;
+            updateSlider(modelId);
+        }
+
+        function updateSlider(modelId) {
+            const imageSrc = 'images/' + imageFiles[modelId][currentIndices[modelId]];
+            document.getElementById(`session${modelId.toUpperCase()}-img`).src = imageSrc;
+            const maxImages = imageFiles[modelId].length;
+            document.getElementById(`session${modelId.toUpperCase()}-counter`).textContent = (currentIndices[modelId] + 1) + ' / ' + maxImages;
+
+            document.querySelectorAll(`[onclick*="goToImage('${modelId}"]`).forEach((btn, idx) => {
+                if (idx === currentIndices[modelId]) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function openModal(modelId) {
+            const model = models[modelId];
+            document.getElementById('modal-title').textContent = model.fullName;
+            document.getElementById('modal-desc').textContent = model.desc;
+            document.getElementById('modal-price').textContent = model.price;
+            document.getElementById('modal-origin-text').textContent = model.origin;
+            document.getElementById('modal-details-text').textContent = model.details;
+            document.getElementById('modal-care-text').textContent = model.care;
+
+            document.getElementById('modal-img').src = 'images/' + imageFiles.modal[modelId];
+
+            let specsHTML = '';
+            for (const [key, value] of Object.entries(model.specs)) {
+                specsHTML += `<div class="spec-item"><span class="spec-label">${key}:</span><span class="spec-value">${value}</span></div>`;
+            }
+            document.getElementById('modal-specs-content').innerHTML = specsHTML;
+
+            document.getElementById('add-to-cart-btn').onclick = function() {
+                window.open(productUrls[modelId], '_blank');
+            };
+
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email && email.includes('@')) {
+                // Enviar email con Static Forms
+                const formData = new FormData();
+                formData.append('email', email);
+                formData.append('name', 'Trapala Subscriber');
+                formData.append('message', 'New subscriber to Trapala newsletter');
+                formData.append('accessKey', 'sf_n0e6afeig6fn36b6e2b3l8ca'); // Reemplazar con tu access key
+
+                fetch('https://api.staticforms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById('newsletter-email').value = '';
+                            document.getElementById('welcome-modal').classList.add('active');
+                        } else {
+                            // Mostrar modal incluso si hay error en email (para pruebas)
+                            document.getElementById('newsletter-email').value = '';
+                            document.getElementById('welcome-modal').classList.add('active');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        // Mostrar modal incluso si hay error (para pruebas)
+                        document.getElementById('newsletter-email').value = '';
+                        document.getElementById('welcome-modal').classList.add('active');
+                    });
+            } else {
+                alert('Please enter a valid email address');
+            }
+        }
+
+        function closeWelcomeModal() {
+            document.getElementById('welcome-modal').classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            const welcomeModal = document.getElementById('welcome-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+            if (event.target === welcomeModal) {
+                closeWelcomeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>
